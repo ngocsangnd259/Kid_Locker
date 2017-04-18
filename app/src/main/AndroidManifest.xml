@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.lightgeneration.kid_locker">
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"></uses-permission>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" tools:ignore="ProtectedPermissions" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon_label_kid"
+        android:label="@string/app_name"
+        android:name=".utils.LockKidApplication"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.LockScreenActivity"
+            android:screenOrientation="landscape"
+            >
+
+        </activity>
+        <activity
+            android:name=".activities.ComponentActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".activities.SettingAcitivity"
+            android:theme="@style/AppTheme.Register"
+            ></activity>
+        <activity android:name=".activities.PassWordActivity"
+            android:theme="@style/AppTheme.PassWord"
+            >
+
+        </activity>
+        <activity android:name=".activities.RegisterActivity"
+            android:theme="@style/AppTheme.Register"
+            ></activity>
+        <activity android:name=".activities.EditInfoAcitivity"
+            android:theme="@style/AppTheme.Register"
+            >
+
+        </activity>
+        <service android:name=".service.LockService"></service>
+        <receiver android:name=".broadcast.BootBroadcast">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED">
+                </action>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
